@@ -8,13 +8,22 @@ AM_CFLAGS =\
 	 -Wall\
 	 -g
 
-bin_PROGRAMS = octetos_crytography
+lib_LTLIBRARIES = liboctetos-crytography.la
 
-octetos_crytography_SOURCES = \
-	main.cc String.cc
+noinst_PROGRAMS = octetos_crytography
 
-octetos_crytography_LDFLAGS = $(OPENSSL_CFLGAS)
+octetos_crytography_SOURCES = main.cc
+octetos_crytography_LDFLAGS = 
+octetos_crytography_LDADD = liboctetos-crytography.la
 
-octetos_crytography_LDADD = $(OPENSSL_LIBS)
+liboctetos_crytography_la_CXXFLAGS =$(OPENSSL_CFLGAS) 
+liboctetos_crytography_la_LIBADD = $(OPENSSL_LIBS)   
+liboctetos_crytography_la_SOURCES = String.cc
 
+octetos_cryptography_includedir = $(includedir)/octetos/cryptography
+octetos_cryptography_include_HEADERS = String.hh
 
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = octetos-cryptography.pc
+
+EXTRA_DIST = octetos-cryptography.pc.in

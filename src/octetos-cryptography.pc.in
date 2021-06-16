@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+datarootdir=@datarootdir@
+datadir=@datadir@
+includedir=@prefix@/include
+
+Name: octetos-core
+Description: C++ Library for Cryptography functions.
+Version: @VERSION@
+Requires: octetos-core
+Libs: -L${libdir} -loctetos-cryptography 
+Cflags: -I${includedir}

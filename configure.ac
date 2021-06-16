@@ -1,6 +1,6 @@
 
 
-AC_INIT(octetos-crytography, 0.1.0-alpha,azael.devel@gmail.com)
+AC_INIT(octetos-crytography, 0.1.0-alpha, azael.devel@gmail.com)
 
 AC_CONFIG_HEADERS([config.h])
 
@@ -26,5 +26,5 @@ PKG_CHECK_MODULES(OPENSSL,openssl)
 AC_OUTPUT([
 Makefile
 src/Makefile
-
+src/octetos-cryptography.pc
 ])
